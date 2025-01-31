@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shared Memory Wall</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>📸 Shared Memory Wall</h1>
+    
+    <div class="user-boxes">
+        <div class="user-box" onclick="openGallery('Rohit')">Rohit</div>
+        <div class="user-box" onclick="openGallery('Harsha')">Harsha</div>
+        <div class="user-box" onclick="openGallery('Vamsi')">Vamsi</div>
+        <div class="user-box" onclick="openGallery('Sravani')">Sravani</div>
+        <div class="user-box" onclick="openGallery('Lalli')">Lalli</div>
+        <div class="user-box" onclick="openGallery('Bhanu')">Bhanu</div>
+        <div class="user-box" onclick="openGallery('Srujana')">Srujana</div>
+    </div>
+
+    <script>
+        function openGallery(user) {
+            window.location.href = `gallery.html?user=${user}`;
+        }
+    </script>
+</body>
+</html>

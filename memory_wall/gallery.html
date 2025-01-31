@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>📸 Welcome to the Memory Wall, <span id="username"></span>!</h1>
+
+    <div class="upload-section">
+        <input type="file" id="imageUpload" />
+        <input type="text" id="caption" placeholder="Enter a caption" />
+        <button onclick="uploadImage()">Upload</button>
+    </div>
+
+    <h2>Your Memories:</h2>
+    <div class="gallery" id="gallery">
+        <!-- Images will be displayed here -->
+    </div>
+
+    <script src="firebase.js"></script>
+    <script src="script.js"></script>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const user = urlParams.get('user');
+        document.getElementById("username").innerText = user;
+
+        // Load images for the selected user
+        document.addEventListener("DOMContentLoaded", function() {
+            displayImages(user);
+        });
+    </script>
+</body>
+</html>
